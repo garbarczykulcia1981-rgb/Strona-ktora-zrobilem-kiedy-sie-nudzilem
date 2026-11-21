@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+    }
+    #gracz {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>SUPER GRA 3000 (Wersja Beta)</h1>
+  <p id="wynik">Punkty: 0</p>
+  <p id="komunikat">Kliknij czerwony kwadrat, żeby zdobyć punkt!</p>
+
+  <div id="gracz" onclick="zepsujGre()"></div>
+
+  <br><br>
+  <button onclick="alert('BŁĄD 404: Przycisk skoku został ukradziony!')">Skocz</button>
+  <a href="memy.html">Wróć na stronę główną</a>
+
+  <script>
+    let punkty = 0;
+
+    function zepsujGre() {
+      // Zamiast dodawać punkty, gra je odejmuje i losuje głupoty
+      punkty = punkty - Math.floor(Math.random() * 100);
+      document.getElementById('wynik').textContent = 'Punkty: ' + punkty + ' (JEJSJSJSHJR)';
+
+      // Kwadrat skacze w losowe miejsce i zmienia kształt
+      let kwadrat = document.getElementById('gracz');
+      kwadrat.style.left = Math.floor(Math.random() * 200) + 'px';
+      kwadrat.style.top = Math.floor(Math.random() * 150) + 'px';
+      kwadrat.style.width = Math.floor(Math.random() * 120) + 'px';
+
+      document.getElementById('komunikat').textContent = 'SYSTEM ZAWIESZONY: Gra się zepsuła, bo za mocno kliknąłeś!';
+    }
+  </script>
+
+</body>
+</html>

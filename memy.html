@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background-color: yellow;
+      color: green;
+    }
+  </style>
+</head>
+<button onclick="document.getElementById('tekst').style.display='block'">Kliknij</button> <p id="tekst" style="display:none;">labubu dubaj chocolate</p>
+<button onclick="document.getElementById('tekst').style.display='block'; document.getElementById('link').style.display='block';">kliknij</button>
+<p id="tekst" style="display:none;">labubu dubaj chocolate</p>
+<a id="link" href="nic_tu_nie_ma.html" style="display:none;">Chcesz zobaczyc cos fajnego?</a>
+<button onclick="document.getElementById('tekst').style.display='block'">nudzisz sie? porozmawiaj z chatbot</button>
+<button onclick="document.getElementById('czatBox').style.display = 'block'; document.getElementById('wiadomoscInput').focus();">
+  Pogadaj z chatbotem
+</button>
+
+<div id="czatBox" style="display: none;">
+  <input id="wiadomoscInput" type="text" placeholder="Napisz cos...">
+  <button onclick="wyslij()">
+    Wyślij
+  </button>
+
+  <p id="mojaWiadomosc"></p>
+  <p id="odpowiedzBota"></p>
+</div>
+<audio id="peakMuza" src="Tuska.mp3"></audio>
+<button onclick="document.getElementById('peakMuza').play()">
+  Posłuchaj Peak Muzy
+</button>
+
+<script>
+  function wyslij() {
+    let tekst = document.getElementById('wiadomoscInput').value;
+    document.getElementById('mojaWiadomosc').textContent = 'Ty: ' + tekst;
+
+    if (Math.random() < 0.3) {
+      document.getElementById('odpowiedzBota').textContent = 'Chatbot: Tusk zhakował mój system i nie mogę ci odpowiedzieć ale wiem co napisałeś: ' + tekst;
+    } else {
+      document.getElementById('odpowiedzBota').textContent = 'Chatbot: Nie wiem co gadasz i nie chce';
+    }
+
+    document.getElementById('wiadomoscInput').value = '';
+  }
+</script>
+<form action="https://formspree.io/f/mnpdbeng" method="POST">
+  <input type="text" name="wiadomosc" placeholder="Napisz do dewelopera..." required>
+  <button type="submit">Wyślij do autora</button>
+</form>
+<a href="gra.html">Zagraj sobie w gierkę</a>
+</body>
+</html>
